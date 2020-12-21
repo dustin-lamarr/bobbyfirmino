@@ -5,6 +5,6 @@ router.get('/liverpool', async (req,res) => {
     res.redirect('/');
 });
 
-router.get('tottenham', async (req, res) => {
+// router.get('tottenham', async (req, res) => {
     
-})
+// })
