@@ -12,8 +12,10 @@ Bobby.init(
             autoIncrement: true
         },
 
-        url: {
+        img: {
             type: DataTypes.STRING,
+            name: DataTypes.STRING,
+            data: DataTypes.BLOB("long"),
             allowNull: false
         },  
 
