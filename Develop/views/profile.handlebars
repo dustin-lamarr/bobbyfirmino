@@ -1,50 +1,124 @@
 <div class="container-fluid">
-<div class="row">
-    <h2>Welcome, {{{user.name}}}!</h2>
-    
-</div>
-<div class="row">
-<h3>Submit a New Gif:</h3>
-</div>
-<div class="row mt-4">
-    
-  <div class="col-md-6">
+  <div class="col-4">
+    <div class="row">
+      <h2>Welcome, {{{user.name}}}!</h2>
 
-    <form class="form new-gif-form">
-      <div class="form-group">
-        <div class="row">        
-          <label class="pr-3" for="gif-name">GIF Name</label>
-        <input class="form-input" type="text" id="gif-name" name="gif-name"/>
-        </div>
-        <div class="row pt-3">        
-        <div class="dropdown">
-          <label class="pr-3" for="gif-name">Opponent</label>
-  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Choose team
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    </div>
   </div>
-</div>
-        </div>
-        <div class="row">
-        <div class="form-check pt-3 px-0">
-          <label class="form-check-label mr-3" for="nutmegRadio">
-    Is it a Nutmeg?
-  </label>
-  <input class="form-check-input ml-3" type="radio" name="nutmegRadio" id="nutmegRadio" value="isMeg">
-</div>
-</div>
-        <label for="gifFile"></label>
-    <input type="file" class="form-control-file pt-3" id="exampleFormControlFile1">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-warning">Submit</button>
-      </div>
-    </form>
+  <div class="col-6">
+    <div class="row">
+      <h3>Submit a New Gif:</h3>
+    </div>
+    <div class="row mt-4">
+
+      <div class="col-md-6">
+
+        <form class="form new-gif-form">
+          <div class="form-group">
+            {{!-- <div class="row">
+              <label class="pr-3 font-weight-bold" for="gif-name">GIF Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="gif-name"
+                name="gif-name"
+              />
+            </div> --}}
+            <div class="row">
+              <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Opponent</label>
   </div>
-</div>
+  <select class="custom-select" id="inputGroupSelect01">
+    <option selected></option>
+                  <option value="tottenham">Tottenham</option>
+                  <option value="southampton">Southampton</option>
+                  <option value="leicester">LeicesterCity</option>
+                  <option value="everton">Everton</option>
+                  <option value="manunited">Manchester United</option>
+                  <option value="chelsea">Chelsea</option>
+                  <option value="westham">West Ham</option>
+                  <option value="mancity">Manchester City</option>
+                  <option value="wolves">Wolverhampton</option>
+                  <option value="astonvilla">Aston Villa</option>
+                  <option value="crystalpalace">Crystal Palace</option>
+                  <option value="leeds">Leeds United</option>
+                  <option value="newcastle">Newcastle</option>
+                  <option value="arsenal">Arsenal</option>
+                  <option value="brighton">Brighton</option>
+                  <option value="burnley">Burnley</option>
+                  <option value="norwich">Norwich City</option>
+                  <option value="watford">Watford</option>
+                  <option value="">TBD</option>
+               </select> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-check pt-3 px-0">
+                <label
+                  class="form-check-label mr-3 font-weight-bold"
+                  for="nutmegRadio"
+                >
+                  Is it a Nutmeg?
+                </label>
+                <input
+                  class="form-check-input ml-3"
+                  type="radio"
+                  name="nutmegRadio"
+                  id="nutmegRadio"
+                  value="isMeg"
+                />
+              </div>
+            </div>
+              <div class="row">
+              <div class="form-check pt-3 px-0">
+                <label
+                  class="form-check-label mr-3 font-weight-bold"
+                  for="goalRadio"
+                >
+                  Is it a Goal?
+                </label>
+                <input
+                  class="form-check-input ml-3"
+                  type="radio"
+                  name="goalRadio"
+                  id="goalRadio"
+                  value="isGoal"
+                />
+              </div>
+            </div>
+              <div class="row">
+              <div class="form-check pt-3 px-0">
+                <label
+                  class="form-check-label mr-3 font-weight-bold"
+                  for="celebrationRadio"
+                >
+                  Is Bobby celebrating?
+                </label>
+                <input
+                  class="form-check-input ml-3"
+                  type="radio"
+                  name="celebrationRadio"
+                  id="celebrationRadio"
+                  value="isCelebration"
+                />
+              </div>
+            </div>
+            <label for="gifFile"></label>
+            <input
+              type="file"
+              class="form-control-file pt-3"
+              id="exampleFormControlFile1"
+            />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-warning">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-2"></div>
 </div>
 <script src="./js/profile.js"></script>
