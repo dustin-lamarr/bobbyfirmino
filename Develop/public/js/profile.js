@@ -1,13 +1,18 @@
-const newFormHandler = async (event) => {
+const multer = require("multer");
+
+const gifUploadHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#gif-name').value.trim();
-  const team = document.querySelector('#team-name').value.trim();
+  const team = document.querySelector('#team').value
+  const nutmeg = document.querySelector('#nutmegRadio').value
+  const goal = document.querySelector('#goalRadio').value
+  const celebration = document.querySelector('#celebrationRadio').value
+  const gif = document.querySelector('#gifFile').value
 
-  if (name && description && content) {
+  if (team && nutmeg && goal && celebration && gif) {
     const response = await fetch(`/api/teams`, {
       method: 'POST',
-      body: JSON.stringify({ team, description, content }),
+      body: JSON.stringify({ team, nutmeg, goal, celebration, gif}),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -38,9 +43,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-blog-form')
-  .addEventListener('submit', newFormHandler);
+  .querySelector('.new-gif-form')
+  .addEventListener('submit', gifUploadHandler);
 
 document
   .querySelector('.blog-list')
-  .addEventListener('click', delButtonHandler);
+  // .addEventListener('click', delButtonHandler);
