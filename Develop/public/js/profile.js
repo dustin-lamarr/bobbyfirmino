@@ -2,14 +2,38 @@
 
 
 const gifUploader = async (event) => {
-  const team = document.querySelector('#team').value
+const team = document.querySelector('#team').value
 const nutmeg = document.querySelector('#nutmegRadio').value
 const goal = document.querySelector('#goalRadio').value
 const celebration = document.querySelector('#celebrationRadio').value
 
   event.preventDefault();
 
-  // console.log(res)
+  if (team) {
+    const response = await fetch(`/api/gifs`, {
+      method: 'POST',
+      body: JSON.stringify({
+          team,
+          is_meg: nutmeg,
+          is_goal: goal,
+          is_celebration: celebration
+         }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      
+    });
+    
+    console.log(response)
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to upload gif');
+    }
+  }
+
+  
 
 
   // const gif = document.getElementById('gifFile').files[0];
@@ -32,22 +56,6 @@ const celebration = document.querySelector('#celebrationRadio').value
   // });
 
   // var uploadGif = multer({ storage: storeGif, fileFilter: imageVerify});
-
-  if (team) {
-    const response = await fetch(`/api/gifs`, {
-      method: 'POST',
-      body: JSON.stringify({ team, nutmeg, goal, celebration }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to upload gif');
-    }
-  }
 };
 
 const delButtonHandler = async (event) => {

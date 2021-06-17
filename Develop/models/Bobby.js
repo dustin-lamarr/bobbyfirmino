@@ -25,16 +25,16 @@ Bobby.init(
         },
 
         is_goal: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: true
         },
 
         is_meg: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: true
         },
         is_celebration: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: true
         },
         user_id: {
