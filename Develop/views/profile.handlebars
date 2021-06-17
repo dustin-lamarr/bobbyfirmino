@@ -13,24 +13,15 @@
 
       <div class="col-md-6">
 
-        <form class="form new-gif-form" action="/store-image" method="POST" enctype="multipart/form-data">
+        <form class="form new-gif-form"
+          action="/profile" method="POST" enctype="multipart/form-data" id="new-gif-form">
           <div class="form-group">
-            {{!-- <div class="row">
-              <label class="pr-3 font-weight-bold" for="gif-name">GIF Name</label>
-              <input
-                class="form-input"
-                type="text"
-                id="gif-name"
-                name="gif-name"
-              />
-            </div> --}}
-            <div class="row">
-              <div class="input-group mb-3">
-    <div class="input-group-prepend">
-    <label class="input-group-text" for="team">Opponent</label>
-    </div>
-    <select class="custom-select" id="team">
-    <option selected></option>
+              <div class="row form-group">
+                
+                  <label class="input-group-text" for="team">Opponent</label>
+                
+                  <select class="custom-select" id="team">
+                  <option selected></option>
                   <option value="tottenham">Tottenham</option>
                   <option value="southampton">Southampton</option>
                   <option value="leicester">LeicesterCity</option>
@@ -52,8 +43,8 @@
                   <option value="">TBD</option>
                </select> 
               </div>
-            </div>
-            <div class="row">
+          
+            <div class="row form-group">
               <div class="form-check pt-3 px-0">
                 <label
                   class="form-check-label mr-3 font-weight-bold"
@@ -66,11 +57,11 @@
                   type="radio"
                   name="nutmegRadio"
                   id="nutmegRadio"
-                  value="isMeg"
+                  value="true"
                 />
               </div>
             </div>
-              <div class="row">
+              <div class="row form-group">
               <div class="form-check pt-3 px-0">
                 <label
                   class="form-check-label mr-3 font-weight-bold"
@@ -83,11 +74,11 @@
                   type="radio"
                   name="goalRadio"
                   id="goalRadio"
-                  value="isGoal"
+                  value="true"
                 />
               </div>
             </div>
-              <div class="row">
+              <div class="row form-group">
               <div class="form-check pt-3 px-0">
                 <label
                   class="form-check-label mr-3 font-weight-bold"
@@ -100,22 +91,16 @@
                   type="radio"
                   name="celebrationRadio"
                   id="celebrationRadio"
-                  value="isCelebration"
+                  value="true"
                 />
               </div>
             </div>
-           <div class="input-group my-3">
-    <div class="custom-file">
-    <input type="file" class="custom-file-input" id="gifFile">
-    <label class="custom-file-label" for="gifFile" aria-describedby="inputFileAddon">Choose file</label>
-    </div>
-    <div class="input-group-append">
-    <span class="input-group-text" id="uploadGif" type="submit">Upload GIf</span>
-    </div>
-  </div>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-warning">Submit</button>
+                  {{!-- <div class="custom-file">
+                  <input type="file" name="gifFile" class="custom-file-input" id="gifFile">
+                  <label class="custom-file-label" for="gifFile" aria-describedby="inputFileAddon"></label>
+                  
+                </div> --}}
+            <button type="submit" class="btn btn-warning mt-3">Submit</button>
           </div>
         </form>
       </div>

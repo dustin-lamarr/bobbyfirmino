@@ -16,7 +16,7 @@ Bobby.init(
             type: DataTypes.STRING,
             name: DataTypes.STRING,
             data: DataTypes.BLOB("long"),
-            allowNull: false
+            allowNull: true
         },  
 
         team: {

@@ -1,10 +1,10 @@
 const router = require('express').Router();
 var path = require("path");
 const apiRoutes = require('./api');
-const teamRoutes = require('./teamRoutes');
+const pageRoutes = require('./pageRoutes');
 
 router.use('/api', apiRoutes);
-router.use('/', teamRoutes);
+router.use('/', pageRoutes);
 
 
 

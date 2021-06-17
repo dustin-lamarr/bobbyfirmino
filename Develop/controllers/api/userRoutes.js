@@ -1,5 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const fs = require("fs");
+const { Bobby } = require("../../models");
+const uploadGif = require("../../utils/gifUpload");
+const gif = Bobby.img;
 
 router.post('/', async (req, res) => {
   try {

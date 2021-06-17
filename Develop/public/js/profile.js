@@ -1,23 +1,47 @@
-const multer = require("multer");
+// const multer = require('multer');
 
-const gifUploadHandler = async (event) => {
+
+const gifUploader = async (event) => {
+  const team = document.querySelector('#team').value
+const nutmeg = document.querySelector('#nutmegRadio').value
+const goal = document.querySelector('#goalRadio').value
+const celebration = document.querySelector('#celebrationRadio').value
+
   event.preventDefault();
 
-  const team = document.querySelector('#team').value
-  const nutmeg = document.querySelector('#nutmegRadio').value
-  const goal = document.querySelector('#goalRadio').value
-  const celebration = document.querySelector('#celebrationRadio').value
-  const gif = document.querySelector('#gifFile').value
+  // console.log(res)
 
-  if (team && nutmeg && goal && celebration && gif) {
-    const response = await fetch(`/api/teams`, {
+
+  // const gif = document.getElementById('gifFile').files[0];
+
+  // const imageVerify = (req, file, cb) => {
+  //   if (file.mimetype.startsWith("image")) {
+  //       cb(null, true);
+  //   } else {
+  //       cb("Image files only", false);
+  //   }
+  // };
+  
+  // var storeGif = multer.diskStorage({
+  //   destination: (req, file, cb) => {
+  //       cb(null, __basedir + "/resources/static/assets/uploads/");
+  //   },
+  //   filename: (req, file, cb) => {
+  //       cb(null, `${Date.now()}-bobbyfirmino-${file.originalname}`)
+  //   },
+  // });
+
+  // var uploadGif = multer({ storage: storeGif, fileFilter: imageVerify});
+
+  if (team) {
+    const response = await fetch(`/api/gifs`, {
       method: 'POST',
-      body: JSON.stringify({ team, nutmeg, goal, celebration, gif}),
+      body: JSON.stringify({ team, nutmeg, goal, celebration }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
+    
     if (response.ok) {
       document.location.replace('/profile');
     } else {
@@ -43,8 +67,8 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-gif-form')
-  .addEventListener('submit', gifUploadHandler);
+  .querySelector('#new-gif-form')
+  .addEventListener('submit', gifUploader);
 
 document
   .querySelector('.blog-list')
