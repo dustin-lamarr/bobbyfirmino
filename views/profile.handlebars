@@ -6,22 +6,17 @@
     </div>
   </div>
   <div class="col">
-    <div class="row">
+    <div class="container-fluid">
       <h3>Submit a New Gif:</h3>
     </div>
     <div class="row mt-4">
-
-      <div class="col-md-6">
-
         <form class="form new-gif-form"
           action="/profile" method="POST" enctype="multipart/form-data" id="new-gif-form">
           <div class="form-group">
               <div class="row form-group">
-                
-                  <label class="input-group-text" for="team">Opponent</label>
-                
+                    <label class="form-check-label font-weight-bold pb-1" for="team">Opponent</label>
                   <select class="custom-select" id="team">
-                  <option selected></option>
+                  {{!-- <option selected>Select Team</option> --}}
                   <option value="tottenham">Tottenham</option>
                   <option value="southampton">Southampton</option>
                   <option value="leicester">LeicesterCity</option>
@@ -95,18 +90,41 @@
                 />
               </div>
             </div>
+            
+            <div class="container-fluid p-2">
                   {{!-- <div class="custom-file">
                   <input type="file" name="gifFile" class="custom-file-input" id="gifFile">
                   <label class="custom-file-label" for="gifFile" aria-describedby="inputFileAddon"></label>
                   
                 </div> --}}
+
+                <input type="file" class="filepond" name="filepond" id="gifPond"/>
+
+               
+                <script>
+                  FilePond.setOptions({
+                          allowDrop: false,
+                          allowReplace: false,
+                          instantUpload: false,
+                          styles: {
+                            stylePanelLayout: 'integrated'
+                          },
+                          
+                        })
+                  const inputElement = document.querySelector('#gifPond');
+    
+                    // Create a FilePond instance
+                  const pond = FilePond.create(inputElement, {
+                    allowDrop: false,
+                    acceptedFileTypes: ['image/*']
+                    });
+                </script>
+            </div>
             <button type="submit" class="btn btn-warning mt-3">Submit</button>
           </div>
         </form>
-      </div>
     </div>
   </div>
   </div>
   <div class="col"></div>
 </div>
-<script src="./js/profile.js"></script>

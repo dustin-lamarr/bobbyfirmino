@@ -3,7 +3,7 @@ const withAuth = require('../../utils/auth')
 const { User } = require('../../models');
 const fs = require("fs");
 const { Bobby } = require("../../models");
-const uploadGif = require("../../utils/gifUpload");
+const uploadGif = require("../../public/js/gifUpload");
 const gif = Bobby.img;
 
 const writeGifs = async (req, res) => {

@@ -27,6 +27,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
+    "filepond": "^4.28.2",
+    "filepond-plugin-file-validate-type": "^1.2.6",
     "handlebars": "^4.7.6",
     "multer": "^1.4.2",
     "mysql2": "^2.2.5",
