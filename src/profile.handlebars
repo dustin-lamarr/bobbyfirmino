@@ -92,15 +92,7 @@
             </div>
             
             <div class="container-fluid p-2">
-                  {{!-- <div class="custom-file">
-                  <input type="file" name="gifFile" class="custom-file-input" id="gifFile">
-                  <label class="custom-file-label" for="gifFile" aria-describedby="inputFileAddon"></label>
-                  
-                </div> --}}
-
                 <input type="file" class="filepond" name="filepond" id="gifPond"/>
-
-               
                 <script>
                   FilePond.setOptions({
                           allowDrop: false,
@@ -109,7 +101,7 @@
                           styles: {
                             stylePanelLayout: 'integrated'
                           },
-                          
+
                         })
                   const inputElement = document.querySelector('#gifPond');
     
