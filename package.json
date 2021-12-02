@@ -35,7 +35,8 @@
     "path": "^0.12.7",
     "sequelize": "^6.3.5",
     "tailwindcss": "^2.2.19",
-    "vue": "^3.2.23"
+    "vue": "^3.2.23",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
